@@ -2,8 +2,7 @@
 
 
 # Path
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/root/bin
-export PATH
+export PATH=${PATH}:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
 
 
 # Variables
@@ -22,7 +21,7 @@ fi
 
 
 # Run & Write the value
-echo ${DATENUM} | tee ${TMPDIR}/numfile
+echo ${DATENUM} | tee ${TMPDIR}/${TMPFILE}
 
 
 # Processing at the end.
