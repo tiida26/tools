@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 # Path
@@ -6,38 +6,26 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
 export PATH
 
 
-# Variables 01
+# Variables
 DATE=$(date +%Y%m%d)
-TIMEFILE=/tmp/time_file
-NUMFILE=/tmp/num_file
+DATENUM=${DATE}01
+TMPDIR=/tmp
+TMPFILE=numfile
 
 
-# Make a 'timefile'
-touch -t ${DATE}0000 ${TIMEFILE}
-
-
-# Determines whether to reset the file.
-if [ ! -f ${NUMFILE} ] || [ ${NUMFILE} -ot ${TIMEFILE} ] ; then
-    echo '0' >| ${NUMFILE}
+# Check the timestamp.
+TMP=$(find ${TMPDIR} -maxdepth 1 -type f -daystart -mtime 0 -name ${TMPFILE})
+if [ ${TMP} ] ; then
+    TMPNUM=$(cat ${TMP})
+    DATENUM=$(($TMPNUM+1))
 fi
 
 
-# Variables 02
-NUMNOW=$(cat ${NUMFILE})
-NUMNEXT=$(expr ${NUMNOW} + 1)
-NUM=$(printf "%02d " ${NUMNEXT})
-VALUE=${DATE}${NUM}
-
-
-# Run
-echo ${VALUE}
+# Run & Write the value
+echo ${DATENUM} | tee ${TMPDIR}/numfile
 
 
 # Processing at the end.
-echo "${NUMNEXT}" >| ${NUMFILE}
-
-if [ -f ${TIMEFILE} ] ; then
-    rm -f ${TIMEFILE}
-fi
-
 exit 0
+
+
