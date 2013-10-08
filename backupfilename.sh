@@ -16,7 +16,7 @@ TMPFILE=numfile
 TMP=$(find ${TMPDIR} -maxdepth 1 -type f -daystart -mtime 0 -name ${TMPFILE})
 if [ ${TMP} ] ; then
     TMPNUM=$(cat ${TMP})
-    DATENUM=$(($TMPNUM+1))
+    DATENUM=$((${TMPNUM}+1))
 fi
 
 
