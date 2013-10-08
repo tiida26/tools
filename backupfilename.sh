@@ -7,7 +7,7 @@ export PATH
 
 
 # Variables 01
-DATE=`date +%Y%m%d`
+DATE=$(date +%Y%m%d)
 TIMEFILE=/tmp/time_file
 NUMFILE=/tmp/num_file
 
@@ -23,9 +23,9 @@ fi
 
 
 # Variables 02
-NUMNOW=`cat ${NUMFILE}`
-NUMNEXT=`expr ${NUMNOW} + 1`
-NUM=`printf "%02d " ${NUMNEXT}`
+NUMNOW=$(cat ${NUMFILE})
+NUMNEXT=$(expr ${NUMNOW} + 1)
+NUM=$(printf "%02d " ${NUMNEXT})
 VALUE=${DATE}${NUM}
 
 
