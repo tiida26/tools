@@ -3,8 +3,8 @@
         font-family: MeiryoKe_Gothic,メイリオ,sans-serif;
       }
     h1 , h2 , h3 { 
-                   color: navy;
-                   background-color: LightCyan;
+                   color: SteelBlue;
+                   background-color: Azure;
                    display: inline;
                  }
     * { font-family: MeiryoKe_Gothic,メイリオ,sans-serif; }
