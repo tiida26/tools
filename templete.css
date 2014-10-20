@@ -1,3 +1,11 @@
 <style type="text/css">
-	a { font-family: MeiryoKe_Gothic,メイリオ,sans-serif; }
+    a { text-decoration: none;
+        font-family: MeiryoKe_Gothic,メイリオ,sans-serif;
+      }
+    h1 , h2 , h3 { 
+                   color: navy;
+                   background-color: LightCyan;
+                   display: inline;
+                 }
+    * { font-family: MeiryoKe_Gothic,メイリオ,sans-serif; }
 </style>
