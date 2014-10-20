@@ -1,11 +1,24 @@
+<link rel="stylesheet" href="http://ope.data-hotel.intranet/images/css/github.css">
+
 <style type="text/css">
+
     a { text-decoration: none;
         font-family: MeiryoKe_Gothic,メイリオ,sans-serif;
       }
+
     h1 , h2 , h3 { 
                    color: SteelBlue;
                    background-color: Azure;
                    display: inline;
                  }
+
+    ul , li {
+              margin: 0 0 0 1em;
+              padding: 2px;
+            }
+
     * { font-family: MeiryoKe_Gothic,メイリオ,sans-serif; }
+
+    .col-red { color: crimson };
+
 </style>
